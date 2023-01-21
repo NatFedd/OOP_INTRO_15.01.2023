@@ -24,6 +24,4 @@ public class Car2 {
                       ", country='" + country + '\'' +
                       '}';
     }
-
-
 }
