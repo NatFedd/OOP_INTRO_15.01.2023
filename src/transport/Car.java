@@ -27,31 +27,28 @@ public class Car {
             String registrationNumber,
             int seatsCount
     ) {
-
-        this.transmissionType = transmissionType;
-        this.bodyType = bodyType;
-        this.registrationNumber = registrationNumber;
-        this.seatsCount = seatsCount;
-
-        if ((brand.equals(" ")) || brand == "null") {
+        if ((brand.equals(" ")) || brand == null) {
             this.brand = "default";
         } else {
             this.brand = brand;
         }
 
-        if ((model == " ") || model == "null") {
+        if ((model.equals(" ")) || model == null) {
             this.model = "default";
         } else {
             this.model = model;
         }
 
-        this.engineVolume = engineVolume;
-        if (this.engineVolume <= 0) {
-            this.engineVolume = 1.5f;
+        if (engineVolume == 0) {
+            this.engineVolume = 1.6f;
+        } else {
+            this.engineVolume = engineVolume;
         }
-        this.color = color;
-        if ((this.color == " ") || this.color == "null") {
-            this.color = "white";
+
+        if ((color.equals(" ")) || color == null) {
+            this.color = "default";
+        } else {
+            this.color = color;
         }
 
         if (year <= 0) {
@@ -60,21 +57,59 @@ public class Car {
             this.year = year;
         }
 
-        if ((country == " ") || country == "null") {
+        if ((country.equals(" ")) || country == null) {
             this.country = "default";
         } else {
             this.country = country;
         }
-    }
 
+        if ((transmissionType.equals(" ")) || transmissionType == null) {
+            this.transmissionType = "default";
+        } else {
+            this.transmissionType = transmissionType;
+        }
+
+        if ((bodyType.equals(" ")) || bodyType == null) {
+            this.bodyType = "default";
+        } else {
+            this.bodyType = bodyType;
+        }
+
+        if ((registrationNumber.equals(" ")) || registrationNumber == null) {
+            this.registrationNumber = "default";
+        } else {
+            this.registrationNumber = registrationNumber;
+        }
+
+        if (seatsCount == 0) {
+            this.seatsCount = 5;
+        } else {
+            this.seatsCount = seatsCount;
+        }
+
+    }
     public String getBrand() {
         return brand;
     }
 
-
-
     public String getModel() {
         return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getBodyType(){
+        return bodyType;
+    }
+
+    public int getSeatsCount(){
+        return seatsCount;
     }
 
     public double getEngineVolume() {
@@ -93,17 +128,29 @@ public class Car {
         this.color = color;
     }
 
-    public int getYear() {
-        return year;
+    public String getTransmissionType() {
+        return transmissionType;
     }
 
-    public String getCountry() {
-        return country;
+    public void setTransmissionType(String transmissionType) {
+        this.transmissionType = transmissionType;
+    }
+
+    public String getRegistrationNumber() {
+        return registrationNumber;
+    }
+
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
+    }
+
+    public void setSummerTypeTyres(boolean summerTypeTyres) {
+        this.summerTypeTyres = summerTypeTyres;
     }
 
     @Override
     public String toString() {
-        return "Car1{" +
+        return "Car{" +
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", engineVolume=" + engineVolume +
