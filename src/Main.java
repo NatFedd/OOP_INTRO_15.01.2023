@@ -4,7 +4,8 @@ import transport.Car;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Задание 1");
-        Car car1 = new Car(
+        Car car1;
+        car1 = new Car(
                 "Lada",
                 "Granta",
                 1.7f,
@@ -14,7 +15,9 @@ public class Main {
                 "manual",
                 "van",
                 "g339ffru",
-                7
+                7,
+                true,
+                false
         );
         Car car2 = new Car(
                 "Audi",
@@ -26,7 +29,9 @@ public class Main {
                 "auto",
                 "sedan",
                 "g222eru",
-                5
+                5,
+                true,
+                false
         );
         Car car3 = new Car(
                 "BMW",
@@ -38,7 +43,9 @@ public class Main {
                 "auto",
                 "coupe",
                 "g555ddru",
-                4
+                4,
+                false,
+                false
         );
         Car car4 = new Car(
                 "Kia",
@@ -50,7 +57,9 @@ public class Main {
                 "auto",
                 "suv",
                 "l339ffru",
-                7
+                7,
+                true,
+                false
         );
         Car car5 = new Car(
                 "Hyundai",
@@ -62,13 +71,17 @@ public class Main {
                 "auto",
                 "sedan",
                 "s339ffru",
-                5
+                5,
+                true,
+                true
         );
 
         System.out.println(car1);
         System.out.println(car2);
         System.out.println(car3);
         System.out.println(car4);
+        System.out.println(car5);
+        car5.setTyreType(11);
         System.out.println(car5);
     }
 }

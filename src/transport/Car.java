@@ -1,6 +1,25 @@
 package transport;
 
 public class Car {
+    private class Key {
+        private final boolean remoteEngineStart;
+        private final boolean keylessAccess;
+
+        Key(boolean remoteEngineStart,  boolean keylessAccess) {
+            this.remoteEngineStart = remoteEngineStart;
+            this.keylessAccess = keylessAccess;
+        }
+
+        public boolean getRemoteEngineStart() {
+            return this.remoteEngineStart;
+        }
+
+        public boolean getKeylessAccess() {
+            return this.keylessAccess;
+        }
+
+    }
+
     private final String brand;
     private final String model;
     private float engineVolume;
@@ -14,6 +33,8 @@ public class Car {
     private final int seatsCount;
     private boolean summerTypeTyres;
 
+    private Key key;
+
 
     public Car(
             String brand,
@@ -25,7 +46,9 @@ public class Car {
             String transmissionType,
             String bodyType,
             String registrationNumber,
-            int seatsCount
+            int seatsCount,
+            boolean remoteEngineStart,
+            boolean keylessAccess
     ) {
         if ((brand.equals(" ")) || brand == null) {
             this.brand = "default";
@@ -87,6 +110,22 @@ public class Car {
             this.seatsCount = seatsCount;
         }
 
+        this.key = new Key(remoteEngineStart, keylessAccess);
+    }
+    public void setTyreType(int month) {
+        switch (month) {
+            case 10:
+            case 11:
+            case 12:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                this.summerTypeTyres = true;
+                break;
+            default:
+                this.summerTypeTyres = false;
+      }
     }
     public String getBrand() {
         return brand;
@@ -148,15 +187,31 @@ public class Car {
         this.summerTypeTyres = summerTypeTyres;
     }
 
+    public boolean getRemoteEngineStart() {
+        return this.key.getRemoteEngineStart();
+    }
+
+    public boolean getKeylessAccess() {
+        return this.key.getKeylessAccess();
+    }
+
     @Override
     public String toString() {
         return "Car{" +
-                "brand='" + brand + '\'' +
+                "key=" + key +
+                ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", engineVolume=" + engineVolume +
                 ", color='" + color + '\'' +
                 ", year=" + year +
                 ", country='" + country + '\'' +
+                ", transmissionType='" + transmissionType + '\'' +
+                ", bodyType='" + bodyType + '\'' +
+                ", registrationNumber='" + registrationNumber + '\'' +
+                ", seatsCount=" + seatsCount +
+                ", summerTypeTyres=" + summerTypeTyres +
+                ", remoteEngineStart=" + getRemoteEngineStart() +
+                ", keylessAccess=" + getKeylessAccess() +
                 '}';
     }
 }
