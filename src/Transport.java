@@ -44,4 +44,8 @@ public abstract class Transport<T> implements Competing {
                 ", volumeEngine=" + volumeEngine +
                 '}';
     }
+
+    public T getNameDriver() {
+        return null;
+    }
 }

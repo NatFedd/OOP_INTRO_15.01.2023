@@ -45,10 +45,12 @@ public class Main {
         System.out.println(trucks3);
         System.out.println(trucks4);
         System.out.println("Задание 4");
+        System.out.println("водитель А управляет автомобилем Б и будет участвовать в заезде");
     }
 
-    private static void printInfo(Transport<?> transport) {
-        System.out.println("Водитель " + transport.getNameDriver() + " управляет автомобилем " + transport.getBrand() + " и будет участвовать в заезде");
+    public static void printInfo(Transport<?> transport) {
+        System.out.println("Водитель с правами " + transport.getNameDriver() + " управляет автомобилем " + transport.getBrand() + " и будет участвовать в заезде");
+
     }
 }
 
