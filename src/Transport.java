@@ -1,79 +1,51 @@
-public class Transport {
-    private String brand;
-    private String model;
-    private int year;
-    private String country;
-    private String color;
-    private float maximumMovementSpeed;
+import java.util.ArrayList;
+import java.util.List;
 
+public abstract class Transport<T> implements Competing {
+    private final String brand;
+    private final String model;
+    private float volumeEngine;
+
+    private List<Driver> driverList = new ArrayList<>();
+ public Transport(String brand, String model, float volumeEngine) {
+     if (brand == null || brand.isEmpty()) {
+         brand = "default";
+     }
+         this.brand = brand;
+     if (model == null || model.isEmpty()) {
+         model = "default";
+     }
+     this.model = model;
+     if (volumeEngine <= 0) {
+         volumeEngine = 1.6f;
+     }
+     this.volumeEngine = volumeEngine;
+ }
     public String getBrand() {
         return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
     }
 
     public String getModel() {
         return model;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public float getVolumeEngine() {
+        return volumeEngine;
     }
 
-    public int getYear() {
-        return year;
-    }
+    abstract void startMoving();
+    abstract void stopMoving();
 
-    public String getCountry() {
-        return country;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if((this.color ==" ")||this.color =="null") {
-            this.color = "default";
-        } else {
-            this.color = color;
-        }
-    }
-
-    public float getMaximumMovementSpeed() {
-        return maximumMovementSpeed;
-    }
-
-    public void setMaximumMovementSpeed(float maximumMovementSpeed) {
-        if (this.maximumMovementSpeed != 0) {
-            this.maximumMovementSpeed = maximumMovementSpeed;
-        } else {
-            this.maximumMovementSpeed = 202;
-        }
-    }
-
-
-
-    public Transport(String brand, String model, int year, String country, String color, float maximumMovementSpeed) {
-        this.brand = brand;
-        this.model = model;
-        this.year = year;
-        this.country = country;
-        this.color = color;
-        this.maximumMovementSpeed = maximumMovementSpeed;
-
-    }
+    @Override
     public String toString() {
         return "Transport{" +
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
-                ", year=" + year +
-                ", country='" + country + '\'' +
-                ", color='" + color + '\'' +
-                ", MaximumMovementSpeed=" + maximumMovementSpeed +
+                ", volumeEngine=" + volumeEngine +
                 '}';
     }
 
+    public T getNameDriver() {
+        return null;
+    }
 }
