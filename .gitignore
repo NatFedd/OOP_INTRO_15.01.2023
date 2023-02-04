@@ -3,6 +3,8 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .idea
+/.idea
+/.idea/
 OOP_INTRO_15.01.2023.iml/
 
 ### Eclipse ###
