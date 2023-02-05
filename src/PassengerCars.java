@@ -2,34 +2,40 @@ public class PassengerCars extends Transport {
     private int pitStop;
     private int maxSpeed;
     private int bestLapTime;
-    public PassengerCars(String brand, String model, float volumeEngine, int pitStop, int maxSpeed, int bestLapTime) {
-        super(brand, model, volumeEngine);
-        this.pitStop = pitStop;
-        this.maxSpeed = maxSpeed;
-        this.bestLapTime = bestLapTime;
+    private final BodyTypePC setBodyTypePC;
+    private BodyTypePC bodyTypePC;
+    private Type type;
+
+    public PassengerCars(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, BodyTypePC bodyTypePC, Type type) {
+        super(brand, model, volumeEngine, maxSpeed);
+        this.setBodyTypePC = bodyTypePC;
+        this.type = type;
+    }
+    public Type getType() {
+        return type;
+    }
+    public void setBodyTypePC(BodyTypePC bodyTypePC) {
+        this.bodyTypePC = bodyTypePC;
     }
 
+    public String getBodyTypePC() {
+        return String.valueOf(bodyTypePC.ordinal());
+    }
     @Override
     public void getPitStop() {
-        System.out.println("pit stop is" + pitStop);
-    }
 
+    }
     @Override
     public void getBestLapTime() {
-        System.out.println("best lap time is" + bestLapTime);
-    }
 
-    @Override
-    public void getMaxSpeed() {
-        System.out.println("max speed is" + maxSpeed);
     }
     @Override
-    void startMoving() {
-        System.out.println("Car started");
-    }
-    @Override
-    void stopMoving() {
-        System.out.println("Car stopped");
+    public void printType() {
+        if (this.type != null) {
+            System.out.println(this.type);
+        } else {
+            System.out.println("Данных по транстпортному средству недостаточно");
+        }
     }
 }
 
