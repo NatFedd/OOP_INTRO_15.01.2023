@@ -1,10 +1,11 @@
 public abstract class Transport implements Competing {
     private final String brand;
     private final String model;
+    protected BodyTypePC BodyTypePC;
     private String betterTime;
     private double volumeEngine;
     private int maxSpeed;
-    private Type type;
+    private final Type type;
 
 
     public Transport(String brand, String model, double engineVolume, int maxSpeed, Type type) {

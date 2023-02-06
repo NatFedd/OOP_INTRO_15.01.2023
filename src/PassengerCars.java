@@ -2,13 +2,12 @@ public class PassengerCars extends Transport {
     private int pitStop;
     private int maxSpeed;
     private int bestLapTime;
-    private final BodyTypePC setBodyTypePC;
     private BodyTypePC bodyTypePC;
 
 
     public PassengerCars(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, BodyTypePC bodyTypePC, Type type) {
         super(brand, model, volumeEngine, maxSpeed, type);
-        this.setBodyTypePC = bodyTypePC;
+        this.BodyTypePC = bodyTypePC;
 
     }
     public void setBodyTypePC(BodyTypePC bodyTypePC) {
