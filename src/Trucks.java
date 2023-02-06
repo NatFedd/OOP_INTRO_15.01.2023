@@ -3,16 +3,15 @@ public class Trucks extends Transport {
     private final int maxSpeed;
     private final int bestLapTime;
     private TypeLoadCapacityTrucks typeLoadCapacityTrucks;
-    private Type type;
+
 
 
     public Trucks(String brand, String model, float volumeEngine, int pitStop, int maxSpeed, int bestLapTime, TypeLoadCapacityTrucks typeLoadCapacityTrucks, Type type) {
-        super(brand, model, volumeEngine, maxSpeed);
+        super(brand, model, volumeEngine, maxSpeed, type);
         this.pitStop = pitStop;
         this.maxSpeed = maxSpeed;
         this.bestLapTime = bestLapTime;
         this.typeLoadCapacityTrucks = typeLoadCapacityTrucks;
-        this.type = type;
     }
 
     public TypeLoadCapacityTrucks getTypeLoadCapacityTrucks() {
@@ -57,8 +56,8 @@ public class Trucks extends Transport {
 
     @Override
     public void printType() {
-        if (this.type != null) {
-            System.out.println(this.type);
+        if (this.getType() != null) {
+            System.out.println(this.getType());
         } else {
             System.out.println("Данных по транстпортному средству недостаточно");
         }

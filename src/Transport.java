@@ -4,9 +4,10 @@ public abstract class Transport implements Competing {
     private String betterTime;
     private double volumeEngine;
     private int maxSpeed;
+    private Type type;
 
 
-    public Transport(String brand, String model, double engineVolume, int maxSpeed) {
+    public Transport(String brand, String model, double engineVolume, int maxSpeed, Type type) {
         if(brand == null || brand == "") {
             this.brand = "default";
         } else {
@@ -21,9 +22,12 @@ public abstract class Transport implements Competing {
 
         this.setEngineVolume(engineVolume);
         this.setMaxSpeed(maxSpeed);
+        this.type = type;
 
     }
-
+    public Type getType() {
+        return type;
+    }
     public String getBrand() {
         return brand;
     }
@@ -32,7 +36,7 @@ public abstract class Transport implements Competing {
         return model;
     }
 
-    public double getEngineVolume() {
+    public double getVolumeEngine() {
         return volumeEngine;
     }
 
@@ -44,6 +48,7 @@ public abstract class Transport implements Competing {
         }
     }
     public abstract void printType();
+
 
     @Override
     public void pitStop() {
@@ -100,9 +105,4 @@ public abstract class Transport implements Competing {
                 '}';
     }
 
-    public enum Type {
-        BUS,
-        TRUCK,
-        CAR;
-    }
 }

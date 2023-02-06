@@ -4,15 +4,12 @@ public class PassengerCars extends Transport {
     private int bestLapTime;
     private final BodyTypePC setBodyTypePC;
     private BodyTypePC bodyTypePC;
-    private Type type;
+
 
     public PassengerCars(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, BodyTypePC bodyTypePC, Type type) {
-        super(brand, model, volumeEngine, maxSpeed);
+        super(brand, model, volumeEngine, maxSpeed, type);
         this.setBodyTypePC = bodyTypePC;
-        this.type = type;
-    }
-    public Type getType() {
-        return type;
+
     }
     public void setBodyTypePC(BodyTypePC bodyTypePC) {
         this.bodyTypePC = bodyTypePC;
@@ -31,8 +28,8 @@ public class PassengerCars extends Transport {
     }
     @Override
     public void printType() {
-        if (this.type != null) {
-            System.out.println(this.type);
+        if (this.getType() != null) {
+            System.out.println(this.getType());
         } else {
             System.out.println("Данных по транстпортному средству недостаточно");
         }

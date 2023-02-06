@@ -3,24 +3,17 @@ public class Bus extends Transport {
     private final int maxSpeed;
     private final int bestLapTime;
     private CapacityBus capacityBus;
-    private Type type;
 
     public Bus(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, CapacityBus capacityBus, Type type) {
-        super(brand, model, volumeEngine, maxSpeed);
+        super(brand, model, volumeEngine, maxSpeed, type);
         this.pitStop = pitStop;
         this.maxSpeed = maxSpeed;
         this.bestLapTime = bestLapTime;
         this.capacityBus = capacityBus;
-        this.type = type;
+
     }
 
-    public Type getType() {
-        return type;
-    }
 
-    public void setType(Type type) {
-        this.type = type;
-    }
 
     public CapacityBus getCapacityBus() {
         return capacityBus;
@@ -62,8 +55,8 @@ public class Bus extends Transport {
 
     @Override
     public void printType() {
-        if (this.type != null) {
-            System.out.println(this.type);
+        if (this.getType() != null) {
+            System.out.println(this.getType());
         } else {
             System.out.println("Данных по транстпортному средству недостаточно");
         }
