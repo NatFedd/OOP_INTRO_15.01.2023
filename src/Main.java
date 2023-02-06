@@ -32,7 +32,7 @@ public class Main {
         System.out.println(bus4);
 
         Trucks trucks1 = new Trucks("Gaz", "66",
-                    7.2f,18, 110, 4, TypeLoadCapacityTrucks.N1, Type.TRUCK);
+                    7.0f,18, 110, 4, TypeLoadCapacityTrucks.N1, Type.TRUCK);
             Trucks trucks2 = new Trucks("Kamaz", "T45",
                     12.0f, 20, 100, 5, TypeLoadCapacityTrucks.N2, Type.TRUCK);
             Trucks trucks3 = new Trucks("Volvo", "Z60",
