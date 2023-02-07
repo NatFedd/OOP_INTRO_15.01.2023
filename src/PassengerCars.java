@@ -8,7 +8,6 @@ public class PassengerCars extends Transport {
 
     public PassengerCars(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, BodyTypePC bodyTypePC, Type type) {
         super(brand, model, volumeEngine, maxSpeed);
-        this.BodyTypePC = bodyTypePC;
         this.type = type;
 
     }
