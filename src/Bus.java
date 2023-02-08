@@ -2,11 +2,23 @@ public class Bus extends Transport {
     private final int pitStop;
     private final int maxSpeed;
     private final int bestLapTime;
-    public Bus(String brand, String model, float volumeEngine, int pitStop, int maxSpeed, int bestLapTime) {
-        super(brand, model, volumeEngine);
+    private CapacityBus capacityBus;
+    private Type type;
+
+    public Bus(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, CapacityBus capacityBus, Type type) {
+        super(brand, model, volumeEngine, maxSpeed);
         this.pitStop = pitStop;
         this.maxSpeed = maxSpeed;
         this.bestLapTime = bestLapTime;
+        this.capacityBus = capacityBus;
+        this.type = type;
+
+    }
+
+
+
+    public CapacityBus getCapacityBus() {
+        return capacityBus;
     }
 
     @Override
@@ -20,13 +32,36 @@ public class Bus extends Transport {
     }
 
     @Override
-    public void getMaxSpeed() {
+    public int getMaxSpeed() {
         System.out.println("Bus max speed is" + maxSpeed);
+        return 0;
     }
-    void startMoving() {
+
+    public void startMoving() {
         System.out.println("Bus is started");
     }
-    void stopMoving() {
+
+    public void stopMoving() {
         System.out.println("Bus is stopped");
+    }
+
+    @Override
+    public String toString() {
+        return "Bus{" +
+                "pitStop=" + pitStop +
+                ", maxSpeed=" + maxSpeed +
+                ", bestLapTime=" + bestLapTime +
+                ", capacityBus=" + capacityBus +
+                '}';
+    }
+
+    @Override
+    public void printType() {
+        if (type != null) {
+            System.out.println(type);
+        } else {
+            System.out.println("Данных по транстпортному средству недостаточно");
+        }
+
     }
 }

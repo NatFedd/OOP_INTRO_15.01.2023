@@ -1,26 +1,26 @@
-import java.util.ArrayList;
-import java.util.List;
-
-public abstract class Transport<T> implements Competing {
+public abstract class Transport implements Competing {
     private final String brand;
     private final String model;
-    private float volumeEngine;
+    private String betterTime;
+    private double volumeEngine;
+    private int maxSpeed;
+    public Transport(String brand, String model, double volumeEngine, int maxSpeed) {
+        if(brand == null || brand == "") {
+            this.brand = "default";
+        } else {
+            this.brand = brand;
+        }
 
-    private List<Driver> driverList = new ArrayList<>();
- public Transport(String brand, String model, float volumeEngine) {
-     if (brand == null || brand.isEmpty()) {
-         brand = "default";
-     }
-         this.brand = brand;
-     if (model == null || model.isEmpty()) {
-         model = "default";
-     }
-     this.model = model;
-     if (volumeEngine <= 0) {
-         volumeEngine = 1.6f;
-     }
-     this.volumeEngine = volumeEngine;
- }
+        if(model == null || model == "") {
+            this.model = "default";
+        } else {
+            this.model = model;
+        }
+
+        this.setVolumeEngine(volumeEngine);
+        this.setMaxSpeed(maxSpeed);
+
+    }
     public String getBrand() {
         return brand;
     }
@@ -29,12 +29,65 @@ public abstract class Transport<T> implements Competing {
         return model;
     }
 
-    public float getVolumeEngine() {
+    public double getVolumeEngine() {
         return volumeEngine;
     }
 
-    abstract void startMoving();
-    abstract void stopMoving();
+    public void setVolumeEngine(double volumeEngine) {
+        if(volumeEngine <= 0) {
+            this.volumeEngine = 1.5;
+        } else {
+            this.volumeEngine = volumeEngine;
+        }
+    }
+    public abstract void printType();
+
+
+    @Override
+    public void pitStop() {
+        System.out.println(getBrand() + " " + getModel() + " make pit-stop");
+    }
+
+    @Override
+    public String betterTime() {
+        return getBetterTime();
+    }
+
+    @Override
+    public int maxSpeed() {
+        return getMaxSpeed();
+    }
+
+    public String getBetterTime() {
+        if(betterTime == null) {
+            return "Еще не участвовал в заездах";
+        }
+        return betterTime;
+    }
+
+    public void setBetterTime(String betterTime) {
+        this.betterTime = betterTime;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        if (maxSpeed <= 0){
+            this.maxSpeed = 180;
+        } else {
+            this.maxSpeed = maxSpeed;
+        }
+    }
+
+    public void startMoving() {
+        System.out.println("Начинаю движение");
+    }
+
+    public void stopMoving() {
+        System.out.println("Останавливаюсь");
+    }
 
     @Override
     public String toString() {
@@ -45,7 +98,4 @@ public abstract class Transport<T> implements Competing {
                 '}';
     }
 
-    public T getNameDriver() {
-        return null;
-    }
 }
