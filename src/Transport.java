@@ -99,9 +99,7 @@ public abstract class Transport implements Competing {
                 '}';
     }
 
-    public boolean diagnosticPassed() {
-        return diagnosticPassed;
-    }
+    public boolean diagnosticPassed();
 
     public void setDiagnosticPassed(boolean diagnosticPassed) {
         this.diagnosticPassed = diagnosticPassed;

@@ -48,7 +48,7 @@ public class Main {
 
         System.out.println(Trucks.passDiagnostics);
         System.out.println(PassengerCars.passDiagnostics);
-        System.out.println(Bus.passDiagnostics);
+        System.out.println(Bus.diagnosticPassed);
 
 
     }
