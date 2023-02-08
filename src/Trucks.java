@@ -65,8 +65,7 @@ public class Trucks extends Transport {
         }
     }
 
-    @Override
-    protected boolean diagnostics() throws Exception {
-        return true;
+    public boolean passDiagnostics() {
+        return this.isDiagnosticPassed();
     }
 }

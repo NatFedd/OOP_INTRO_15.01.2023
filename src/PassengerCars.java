@@ -37,8 +37,8 @@ public class PassengerCars extends Transport {
     }
 
     @Override
-    protected boolean diagnostics() throws Exception {
-        return true;
+    public boolean diagnosticPassed() {
+        return this.isDiagnosticPassed();
     }
 }
 

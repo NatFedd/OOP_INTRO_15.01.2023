@@ -56,8 +56,8 @@ public abstract class Bus extends Transport {
                 '}';
     }
 
-    public static boolean isPassDiagnostics() {
-        return passDiagnostics;
+    public boolean passDiagnostics() throws TransportTypeException{
+        throw new TransportTypeException("Автобусы диагностику проходить не должны");
     }
 
     @Override
