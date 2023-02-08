@@ -1,6 +1,3 @@
-import java.util.List;
-
-//Задание 1.
 public class Main {
     public static void main(String[] args) {
         PassengerCars PassengerCars1 = new PassengerCars("Lada", "Granta",
@@ -19,33 +16,17 @@ public class Main {
 
         Bus bus1 = new Bus("Liaz", "S54",
                 5.2, 22, 95, 3, CapacityBus.Big, Type.BUS) {
-            @Override
-            protected boolean diagnostics() throws Exception {
-                return false;
-            }
         };
         Bus bus2 = new Bus("LAZ", "N8",
                 7.0, 20, 89, 4, CapacityBus.Average, Type.BUS) {
-            @Override
-            protected boolean diagnostics() throws Exception {
-                return false;
-            }
+
         };
         Bus bus3 = new Bus("PAZ", "96",
                 7.5, 18, 96, 5, CapacityBus.EspeciallySmall, Type.BUS) {
-            @Override
-            protected boolean diagnostics() throws Exception {
-                return false;
-            }
         };
         Bus bus4 = new Bus("Nefaz", "196",
                 10.5, 15, 105, 3, CapacityBus.EspeciallyBig, Type.BUS) {
-            @Override
-            protected boolean diagnostics() throws Exception {
-                return false;
-            }
         };
-
         System.out.println(bus1);
         System.out.println(bus2);
         System.out.println(bus3);
@@ -67,7 +48,7 @@ public class Main {
 
         System.out.println(Trucks.passDiagnostics);
         System.out.println(PassengerCars.passDiagnostics);
-        System.out.println(Bus.isPassDiagnostics());
+        System.out.println(Bus.passDiagnostics);
 
 
     }

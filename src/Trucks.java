@@ -68,4 +68,7 @@ public class Trucks extends Transport {
     public boolean passDiagnostics() {
         return this.isDiagnosticPassed();
     }
+    public boolean diagnosticPassed() {
+        return diagnosticPassed();
+    }
 }

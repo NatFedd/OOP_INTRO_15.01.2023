@@ -1,4 +1,4 @@
-public abstract class Bus extends Transport {
+public class Bus extends Transport {
     private static boolean passDiagnostics;
     private final int pitStop;
     private final int maxSpeed;
@@ -15,23 +15,17 @@ public abstract class Bus extends Transport {
         this.type = type;
 
     }
-
-
-
     public CapacityBus getCapacityBus() {
         return capacityBus;
     }
-
     @Override
     public void getPitStop() {
         System.out.println("Bus pit stop is" + pitStop);
     }
-
     @Override
     public void getBestLapTime() {
         System.out.println("Bus best lap time is" + bestLapTime);
     }
-
     @Override
     public int getMaxSpeed() {
         System.out.println("Bus max speed is" + maxSpeed);
