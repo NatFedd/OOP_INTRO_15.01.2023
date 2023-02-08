@@ -1,4 +1,5 @@
 public class Trucks extends Transport {
+    public static boolean passDiagnostics;
     private final int pitStop;
     private final int maxSpeed;
     private final int bestLapTime;
@@ -62,5 +63,10 @@ public class Trucks extends Transport {
         } else {
             System.out.println("Данных по транстпортному средству недостаточно");
         }
+    }
+
+    @Override
+    protected boolean diagnostics() throws Exception {
+        return true;
     }
 }

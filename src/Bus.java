@@ -1,4 +1,5 @@
-public class Bus extends Transport {
+public abstract class Bus extends Transport {
+    private static boolean passDiagnostics;
     private final int pitStop;
     private final int maxSpeed;
     private final int bestLapTime;
@@ -55,6 +56,10 @@ public class Bus extends Transport {
                 '}';
     }
 
+    public static boolean isPassDiagnostics() {
+        return passDiagnostics;
+    }
+
     @Override
     public void printType() {
         if (type != null) {
@@ -65,3 +70,4 @@ public class Bus extends Transport {
 
     }
 }
+
