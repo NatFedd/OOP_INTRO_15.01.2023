@@ -98,7 +98,12 @@ public abstract class Transport implements Competing {
                 ", volumeEngine=" + volumeEngine +
                 '}';
     }
-    protected abstract boolean diagnostics() throws Exception;
+
+    public boolean isDiagnosticPassed() {
+        return diagnosticPassed;
+    }
+
+    abstract boolean diagnosticPassed();
     public void setDiagnosticPassed(boolean diagnosticPassed) {
         this.diagnosticPassed = diagnosticPassed;
     }
