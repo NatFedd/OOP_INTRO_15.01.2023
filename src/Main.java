@@ -3,19 +3,10 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-//        List<String> racers = new ArrayList<>();
-//        racers.add(PassengerCars1);
-//        racers.add(PassengerCars2);
-//        racers.add(PassengerCars3);
-//        racers.add(PassengerCars4);
-//        racers.add(bus1);
-//        racers.add(bus2);
-//        racers.add(bus3);
-//        racers.add(bus4);
-//        racers.add(trucks1);
-//        racers.add(trucks2);
-//        racers.add(trucks3);
-//        racers.add(trucks4);
+
+        for (Transport transport : racers) {
+            System.out.println(transport + " " + Driver.getDriver() + " " + transport.getMachanic());
+        }
 
         PassengerCars PassengerCars1 = new PassengerCars("Lada", "Granta",
                 1.5f, 15, 150, 15, BodyTypePC.SEDAN, Type.CAR, Mechanic.mechanic1, Driver.driverB1);
