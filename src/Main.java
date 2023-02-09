@@ -1,5 +1,36 @@
 public class Main {
     public static void main(String[] args) {
+        List<Transport> racers = new ArrayList<>();
+        racers.add(PassengerCars1);
+        racers.add(PassengerCars2);
+        racers.add(PassengerCars3);
+        racers.add(PassengerCars4);
+        racers.add(bus1);
+        racers.add(bus2);
+        racers.add(bus3);
+        racers.add(bus4);
+        racers.add(trucks1);
+        racers.add(trucks2);
+        racers.add(trucks3);
+        racers.add(trucks4);
+
+        Driver driverB1 = new transport.DriverWithLicenseB("Vova", 5, true);
+        Driver driverB2 = new transport.DriverWithLicenseB("Sasha", 2, true);
+        Driver driverB3 = new transport.DriverWithLicenseB("Dima", 5, true);
+        Driver driverB4 = new transport.DriverWithLicenseB("Alex", 2, true);
+        Driver driverC1 = new transport.DriverWithLicenseB("Pavel", 12, true);
+        Driver driverC2 = new transport.DriverWithLicenseB("Nikolay", 3, true);
+        Driver driverC3 = new transport.DriverWithLicenseB("Kostya", 12, true);
+        Driver driverC4 = new transport.DriverWithLicenseB("Evgeniy", 3, true);
+        Driver driverD1 = new transport.DriverWithLicenseB("Vitaliy", 4, true);
+        Driver driverD2 = new transport.DriverWithLicenseB("Oleg", 7, true);
+        Driver driverD3 = new transport.DriverWithLicenseB("Stas", 4, true);
+        Driver driverD4 = new transport.DriverWithLicenseB("Andrey", 7, true);
+
+        Mechanic mechanic1 = new Mechanic("Max", "Soloviev", "CarBox", "PassengerCars");
+        Mechanic mechanic2 = new Mechanic("Sergey", "Ivanov", "Mashinery", "Bus");
+        Mechanic mechanic3 = new Mechanic("Sasha", "Pavlov", "Machinery", "Truck");
+
         PassengerCars PassengerCars1 = new PassengerCars("Lada", "Granta",
                 1.5f, 15, 150, 15, BodyTypePC.SEDAN, Type.CAR);
         PassengerCars PassengerCars2 = new PassengerCars("Audi", "A8_50_L_TDI_quattro",
@@ -76,6 +107,8 @@ public class Main {
                 }
         System.out.println("Диагностику прошли" + count + " из " + transports.length + "автомобилей");
     }
+
+
 }
 
 
