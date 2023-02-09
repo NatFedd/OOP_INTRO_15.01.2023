@@ -5,13 +5,13 @@ public class PassengerCars extends Transport {
     private int bestLapTime;
     private BodyTypePC bodyTypePC;
     private final Type type;
-    private
+    private Mechanic mechanic;
+    private final Driver driver;
 
-
-    public PassengerCars(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, BodyTypePC bodyTypePC, Type type) {
+    public PassengerCars(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, BodyTypePC bodyTypePC, Type type, Mechanic mechanic, Driver driver) {
         super(brand, model, volumeEngine, maxSpeed);
         this.type = type;
-
+        this.driver = driver;
     }
     public void setBodyTypePC(BodyTypePC bodyTypePC) {
         this.bodyTypePC = bodyTypePC;

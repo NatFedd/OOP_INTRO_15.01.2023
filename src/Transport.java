@@ -5,8 +5,8 @@ public abstract class Transport implements Competing {
     private double volumeEngine;
     private int maxSpeed;
     private boolean diagnosticPassed;
-    private String mechanic;
-    public Transport(String brand, String model, double volumeEngine, int maxSpeed, String mechanic) {
+
+    public Transport(String brand, String model, double volumeEngine, int maxSpeed) {
         if(brand == null || brand == "") {
             this.brand = "default";
         } else {
@@ -43,9 +43,9 @@ public abstract class Transport implements Competing {
         }
     }
 
-    public String getMechanic() {
-        return mechanic;
-    }
+//    public String getMechanic() {
+//       return mechanic;
+//    }
 
     public abstract void printType();
 
@@ -109,6 +109,9 @@ public abstract class Transport implements Competing {
     public boolean isDiagnosticPassed(){
         return diagnosticPassed;
     }
+    Mechanic mechanic1 = new Mechanic("Max", "Soloviev", "CarBox", "PassengerCars");
+    Mechanic mechanic2 = new Mechanic("Sergey", "Ivanov", "Mashinery", "Bus");
+    Mechanic mechanic3 = new Mechanic("Sasha", "Pavlov", "Machinery", "Truck");
 
 
 

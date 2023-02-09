@@ -5,14 +5,18 @@ public class Bus extends Transport {
     private final int bestLapTime;
     private CapacityBus capacityBus;
     private Type type;
+    private final Mechanic mechanic;
+    private Driver driver;
 
-    public Bus(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, CapacityBus capacityBus, Type type) {
+    public Bus(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, CapacityBus capacityBus, Type type, Mechanic mechanic, Driver driver) {
         super(brand, model, volumeEngine, maxSpeed);
         this.pitStop = pitStop;
         this.maxSpeed = maxSpeed;
         this.bestLapTime = bestLapTime;
         this.capacityBus = capacityBus;
         this.type = type;
+        this.mechanic = mechanic;
+        this.driver = driver;
 
     }
     public CapacityBus getCapacityBus() {

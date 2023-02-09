@@ -5,14 +5,16 @@ public class Trucks extends Transport {
     private TypeLoadCapacityTrucks typeLoadCapacityTrucks;
     private Type type;
     public static boolean passDiagnostics;
+    private Driver driver;
 
 
-    public Trucks(String brand, String model, float volumeEngine, int pitStop, int maxSpeed, int bestLapTime, TypeLoadCapacityTrucks typeLoadCapacityTrucks, Type type) {
+    public Trucks(String brand, String model, float volumeEngine, int pitStop, int maxSpeed, int bestLapTime, TypeLoadCapacityTrucks typeLoadCapacityTrucks, Type type, Mechanic mechanic, Driver driver) {
         super(brand, model, volumeEngine, maxSpeed);
         this.pitStop = pitStop;
         this.maxSpeed = maxSpeed;
         this.bestLapTime = bestLapTime;
         this.typeLoadCapacityTrucks = typeLoadCapacityTrucks;
+        this.driver = driver;
     }
 
     public TypeLoadCapacityTrucks getTypeLoadCapacityTrucks() {

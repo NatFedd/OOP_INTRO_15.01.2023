@@ -4,6 +4,13 @@ public class Mechanic {
     private String companyMechanic;
     private String transportType;
 
+    public Mechanic(String nameMechanic, String surnameMechanic, String companyMechanic, String transportType) {
+        this.nameMechanic = nameMechanic;
+        this.surnameMechanic = surnameMechanic;
+        this.companyMechanic = companyMechanic;
+        this.transportType = transportType;
+    }
+
     public String getNameMechanic() {
         return nameMechanic;
     }
@@ -55,4 +62,9 @@ public class Mechanic {
                 ", transportType='" + transportType + '\'' +
                 '}';
     }
+    static Mechanic mechanic1 = new Mechanic("Max", "Soloviev", "CarBox", "PassengerCars");
+    static Mechanic mechanic2 = new Mechanic("Sergey", "Ivanov", "Mashinery", "Bus");
+    static Mechanic mechanic3 = new Mechanic("Sasha", "Pavlov", "Machinery", "Truck");
+
+
 }
