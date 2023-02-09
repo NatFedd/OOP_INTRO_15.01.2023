@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        testDiagnostics();
         PassengerCars PassengerCars1 = new PassengerCars("Lada", "Granta",
                 1.5f, 15, 150, 15, BodyTypePC.SEDAN, Type.CAR);
         PassengerCars PassengerCars2 = new PassengerCars("Audi", "A8_50_L_TDI_quattro",
@@ -49,8 +50,28 @@ public class Main {
         System.out.println(Trucks.passDiagnostics);
         System.out.println(PassengerCars.passDiagnostics);
         System.out.println(Bus.diagnosticPassed);
+        try {
+            checkTransport(bus1, bus2, bus3, bus4);
+        }catch (TransportTypeException e ) {
+            System.out.println("неверный тип транспорта" + e.getMessage());
+        }
+}
 
-
+    }
+    public static void checkTransport(Transport...transports){
+        int count = 0;
+                for(Transport transport : transports) {
+                    if (!transport.passDiagnostics()){
+                        try {
+                            throw new RuntimeException(transport.getBrand() + " " + transport.getModel() + "не прошел диагностику!");
+                        } catch (RuntimeException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        count++;
+                    }
+                }
+        System.out.println("Диагностику прошли" + count + " из " + transports.length + "автомобилей");
     }
 }
 

@@ -49,11 +49,6 @@ public class Bus extends Transport {
                 ", capacityBus=" + capacityBus +
                 '}';
     }
-
-    public boolean passDiagnostics() throws TransportTypeException{
-        throw new TransportTypeException("Автобусы диагностику проходить не должны");
-    }
-
     @Override
     public void printType() {
         if (type != null) {
@@ -61,10 +56,13 @@ public class Bus extends Transport {
         } else {
             System.out.println("Данных по транстпортному средству недостаточно");
         }
-        @Override
-        public boolean diagnosticPassed() {
-            throw new TransportTypeException("Автобусы диагностику проходить не должны");
-        }
+    }
+    @Override
+    public boolean diagnosticPassed() {
+        throw new TransportTypeException("Автобусы диагностику проходить не должны");
+    }
+    public boolean passDiagnostics(){
+        throw new TransportTypeException("Автобусы диагностику проходить не должны");
     }
 }
 

@@ -99,11 +99,11 @@ public abstract class Transport implements Competing {
                 '}';
     }
 
-    public boolean diagnosticPassed();
-
-    public void setDiagnosticPassed(boolean diagnosticPassed) {
-        this.diagnosticPassed = diagnosticPassed;
+    abstract boolean passDiagnostics() throws TransportTypeException;
+    public boolean isDiagnosticPassed(){
+        return diagnosticPassed;
     }
 
-    public abstract boolean diagnosticPassed();
+
+
 }

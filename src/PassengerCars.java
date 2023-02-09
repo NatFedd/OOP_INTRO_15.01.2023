@@ -36,9 +36,9 @@ public class PassengerCars extends Transport {
         }
     }
 
-    @Override
-    public boolean diagnosticPassed() {
-        return this.isDiagnosticPassed();
+    public boolean passDiagnostics() {
+        return this.isDiagnosticsPassed();
     }
+
 }
 

@@ -1,11 +1,10 @@
 public class Trucks extends Transport {
-    public static boolean passDiagnostics;
     private final int pitStop;
     private final int maxSpeed;
     private final int bestLapTime;
     private TypeLoadCapacityTrucks typeLoadCapacityTrucks;
     private Type type;
-
+    public static boolean passDiagnostics;
 
 
     public Trucks(String brand, String model, float volumeEngine, int pitStop, int maxSpeed, int bestLapTime, TypeLoadCapacityTrucks typeLoadCapacityTrucks, Type type) {
@@ -65,7 +64,7 @@ public class Trucks extends Transport {
         }
     }
 
-    public boolean diagnosticPassed() {
-        return diagnosticPassed();
+    public boolean passDiagnostics() {
+        return isdiagnosticPassed();
     }
 }
