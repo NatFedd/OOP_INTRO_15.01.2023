@@ -65,6 +65,6 @@ public class Trucks extends Transport {
     }
 
     public boolean passDiagnostics() {
-        return isdiagnosticPassed();
+        return passDiagnostics;
     }
 }

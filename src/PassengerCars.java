@@ -37,7 +37,7 @@ public class PassengerCars extends Transport {
     }
 
     public boolean passDiagnostics() {
-        return this.isDiagnosticsPassed();
+        return passDiagnostics;
     }
 
 }

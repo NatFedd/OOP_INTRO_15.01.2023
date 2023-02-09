@@ -57,10 +57,6 @@ public class Bus extends Transport {
             System.out.println("Данных по транстпортному средству недостаточно");
         }
     }
-    @Override
-    public boolean diagnosticPassed() {
-        throw new TransportTypeException("Автобусы диагностику проходить не должны");
-    }
     public boolean passDiagnostics(){
         throw new TransportTypeException("Автобусы диагностику проходить не должны");
     }
