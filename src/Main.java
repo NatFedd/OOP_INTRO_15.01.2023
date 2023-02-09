@@ -1,6 +1,3 @@
-import java.util.List;
-
-//Задание 1.
 public class Main {
     public static void main(String[] args) {
         PassengerCars PassengerCars1 = new PassengerCars("Lada", "Granta",
@@ -18,14 +15,18 @@ public class Main {
         System.out.println(PassengerCars4);
 
         Bus bus1 = new Bus("Liaz", "S54",
-                5.2, 22, 95, 3, CapacityBus.Big, Type.BUS);
+                5.2, 22, 95, 3, CapacityBus.Big, Type.BUS) {
+        };
         Bus bus2 = new Bus("LAZ", "N8",
-                7.0,20, 89, 4, CapacityBus.Average, Type.BUS);
-        Bus bus3 = new Bus("PAZ", "96",
-                7.5, 18, 96, 5, CapacityBus.EspeciallySmall, Type.BUS);
-        Bus bus4 = new Bus("Nefaz", "196",
-                10.5, 15, 105, 3, CapacityBus.EspeciallyBig, Type.BUS);
+                7.0, 20, 89, 4, CapacityBus.Average, Type.BUS) {
 
+        };
+        Bus bus3 = new Bus("PAZ", "96",
+                7.5, 18, 96, 5, CapacityBus.EspeciallySmall, Type.BUS) {
+        };
+        Bus bus4 = new Bus("Nefaz", "196",
+                10.5, 15, 105, 3, CapacityBus.EspeciallyBig, Type.BUS) {
+        };
         System.out.println(bus1);
         System.out.println(bus2);
         System.out.println(bus3);
@@ -45,6 +46,35 @@ public class Main {
         System.out.println(trucks3);
         System.out.println(trucks4);
 
+        System.out.println(Trucks.passDiagnostics);
+        System.out.println(PassengerCars.passDiagnostics);
+        System.out.println(bus1.passDiagnostics());
+        System.out.println(bus2.passDiagnostics());
+        System.out.println(bus3.passDiagnostics());
+        System.out.println(bus4.passDiagnostics());
+
+        try {
+            checkTransport(bus1, bus2, bus3, bus4);
+        }catch (TransportTypeException e ) {
+            System.out.println("неверный тип транспорта" + e.getMessage());
+        }
+}
+
+
+    public static void checkTransport(Transport...transports){
+        int count = 0;
+                for(Transport transport : transports) {
+                    if (!transport.passDiagnostics()){
+                        try {
+                            throw new RuntimeException(transport.getBrand() + " " + transport.getModel() + "не прошел диагностику!");
+                        } catch (RuntimeException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        count++;
+                    }
+                }
+        System.out.println("Диагностику прошли" + count + " из " + transports.length + "автомобилей");
     }
 }
 

@@ -4,7 +4,7 @@ public class Trucks extends Transport {
     private final int bestLapTime;
     private TypeLoadCapacityTrucks typeLoadCapacityTrucks;
     private Type type;
-
+    public static boolean passDiagnostics;
 
 
     public Trucks(String brand, String model, float volumeEngine, int pitStop, int maxSpeed, int bestLapTime, TypeLoadCapacityTrucks typeLoadCapacityTrucks, Type type) {
@@ -62,5 +62,9 @@ public class Trucks extends Transport {
         } else {
             System.out.println("Данных по транстпортному средству недостаточно");
         }
+    }
+
+    public boolean passDiagnostics() {
+        return passDiagnostics;
     }
 }

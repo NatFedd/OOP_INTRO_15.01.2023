@@ -4,6 +4,7 @@ public abstract class Transport implements Competing {
     private String betterTime;
     private double volumeEngine;
     private int maxSpeed;
+    private boolean diagnosticPassed;
     public Transport(String brand, String model, double volumeEngine, int maxSpeed) {
         if(brand == null || brand == "") {
             this.brand = "default";
@@ -97,5 +98,12 @@ public abstract class Transport implements Competing {
                 ", volumeEngine=" + volumeEngine +
                 '}';
     }
+
+    abstract boolean passDiagnostics() throws TransportTypeException;
+    public boolean isDiagnosticPassed(){
+        return diagnosticPassed;
+    }
+
+
 
 }

@@ -1,4 +1,5 @@
 public class Bus extends Transport {
+    private static boolean passDiagnostics;
     private final int pitStop;
     private final int maxSpeed;
     private final int bestLapTime;
@@ -14,23 +15,17 @@ public class Bus extends Transport {
         this.type = type;
 
     }
-
-
-
     public CapacityBus getCapacityBus() {
         return capacityBus;
     }
-
     @Override
     public void getPitStop() {
         System.out.println("Bus pit stop is" + pitStop);
     }
-
     @Override
     public void getBestLapTime() {
         System.out.println("Bus best lap time is" + bestLapTime);
     }
-
     @Override
     public int getMaxSpeed() {
         System.out.println("Bus max speed is" + maxSpeed);
@@ -54,7 +49,6 @@ public class Bus extends Transport {
                 ", capacityBus=" + capacityBus +
                 '}';
     }
-
     @Override
     public void printType() {
         if (type != null) {
@@ -62,6 +56,9 @@ public class Bus extends Transport {
         } else {
             System.out.println("Данных по транстпортному средству недостаточно");
         }
-
+    }
+    public boolean passDiagnostics(){
+        throw new TransportTypeException("Автобусы диагностику проходить не должны");
     }
 }
+
