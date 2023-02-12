@@ -42,4 +42,3 @@ public class PassengerCars extends Transport {
     }
 
 }
-

@@ -65,4 +65,3 @@ public class Bus extends Transport {
         throw new TransportTypeException("Автобусы диагностику проходить не должны");
     }
 }
-
