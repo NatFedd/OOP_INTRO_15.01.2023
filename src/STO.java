@@ -1,13 +1,13 @@
 import java.util.Queue;
 
 public class STO {
-        private Transport transport;
-    Queue<Transport> queue;
-    public void addCarQueue(Transport transport) {
-        if (transport.getClass() != Bus.class) {
-            queue.add(transport);
-        }
-    }
+    private Transport transport;
+        Queue<Transport> queue;
+//    public void addCarQueue(Transport transport) {
+//        if (transport.getClass() != Bus.class) {
+//            queue.add(transport);
+//        }
+//    }
     public void carryOutVehicleInspection() {
         queue.element();
     }

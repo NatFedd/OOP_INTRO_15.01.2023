@@ -45,11 +45,23 @@ public abstract class Transport implements Competing {
             this.volumeEngine = volumeEngine;
         }
     }
-
+    List mechanic = new ArrayList();
     public String getMechanic() {
-       return mechanic;
+       return mechanic.toString();
     }
-
+    List<String> racers = new ArrayList<>();
+    mechanic.add(PassengerCars1);
+    mechanic.add(PassengerCars2);
+    mechanic.add(PassengerCars3);
+    mechanic.add(PassengerCars4);
+    mechanic.add(bus1);
+    mechanic.add(bus2);
+    mechanic.add(bus3);
+    mechanic.add(bus4);
+    mechanic.add(trucks1);
+    mechanic.add(trucks2);
+    mechanic.add(trucks3);
+    mechanic.add(trucks4);
     public abstract void printType();
 
 
@@ -115,10 +127,7 @@ public abstract class Transport implements Competing {
 //    Mechanic mechanic1 = new Mechanic("Max", "Soloviev", "CarBox", "PassengerCars");
 //    Mechanic mechanic2 = new Mechanic("Sergey", "Ivanov", "Mashinery", "Bus");
 //    Mechanic mechanic3 = new Mechanic("Sasha", "Pavlov", "Machinery", "Truck");
-    List mechanic = new ArrayList();
-//    public Mechanic getMechanic1() {
-//        return mechanic1;
-//    }
+
 //
 //    public Mechanic getMechanic2() {
 //        return mechanic2;
@@ -128,19 +137,7 @@ public abstract class Transport implements Competing {
 //        return mechanic3;
 //    }
 
-//    List<String> racers = new ArrayList<>();
-//       racers.add(PassengerCars1);
-//       racers.add(PassengerCars2);
-//       racers.add(PassengerCars3);
-//        racers.add(PassengerCars4);
-//        racers.add(bus1);
-//        racers.add(bus2);
-//        racers.add(bus3);
-//        racers.add(bus4);
-//        racers.add(trucks1);
-//        racers.add(trucks2);
-//        racers.add(trucks3);
-//        racers.add(trucks4);
+
 
 
 }
