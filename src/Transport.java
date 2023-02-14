@@ -9,7 +9,7 @@ public abstract class Transport implements Competing {
     private int maxSpeed;
     private boolean diagnosticPassed;
 
-    public Transport(String brand, String model, double volumeEngine, int maxSpeed) {
+    public Transport(String brand, String model, double volumeEngine, int maxSpeed, Mechanic) {
         if(brand == null || brand == "") {
             this.brand = "default";
         } else {
@@ -45,23 +45,16 @@ public abstract class Transport implements Competing {
             this.volumeEngine = volumeEngine;
         }
     }
-    List mechanic = new ArrayList();
-    public String getMechanic() {
-       return mechanic.toString();
+    private List<Mechanic> mechanics = new ArrayList<>();
+
+    public List<Mechanic> getMechanics() {
+        return mechanics;
     }
-    List<String> racers = new ArrayList<>();
-    mechanic.add(PassengerCars1);
-    mechanic.add(PassengerCars2);
-    mechanic.add(PassengerCars3);
-    mechanic.add(PassengerCars4);
-    mechanic.add(bus1);
-    mechanic.add(bus2);
-    mechanic.add(bus3);
-    mechanic.add(bus4);
-    mechanic.add(trucks1);
-    mechanic.add(trucks2);
-    mechanic.add(trucks3);
-    mechanic.add(trucks4);
+
+    public void setMechanics(List<Mechanic> mechanics) {
+        this.mechanics = mechanics;
+    }
+
     public abstract void printType();
 
 
@@ -124,20 +117,4 @@ public abstract class Transport implements Competing {
     public boolean isDiagnosticPassed(){
         return diagnosticPassed;
     }
-//    Mechanic mechanic1 = new Mechanic("Max", "Soloviev", "CarBox", "PassengerCars");
-//    Mechanic mechanic2 = new Mechanic("Sergey", "Ivanov", "Mashinery", "Bus");
-//    Mechanic mechanic3 = new Mechanic("Sasha", "Pavlov", "Machinery", "Truck");
-
-//
-//    public Mechanic getMechanic2() {
-//        return mechanic2;
-//    }
-//
-//    public Mechanic getMechanic3() {
-//        return mechanic3;
-//    }
-
-
-
-
 }
