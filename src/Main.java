@@ -9,7 +9,7 @@ public class Main {
         }
 
         PassengerCars PassengerCars1 = new PassengerCars("Lada", "Granta",
-                1.5f, 15, 150, 15, BodyTypePC.SEDAN, Type.CAR, Transport.mechanic, Driver.driverB1);
+                1.5f, 15, 150, 15, BodyTypePC.SEDAN, Type.CAR, List.of(Mechanic), Driver.driverB1);
         PassengerCars PassengerCars2 = new PassengerCars("Audi", "A8_50_L_TDI_quattro",
                 3.5f, 18, 180, 12, BodyTypePC.SEDAN, Type.CAR, Transport.mechanic, Driver.driverB2);
         PassengerCars PassengerCars3 = new PassengerCars("BMW", "Z8",

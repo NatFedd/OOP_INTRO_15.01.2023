@@ -8,8 +8,17 @@ public abstract class Transport implements Competing {
     private double volumeEngine;
     private int maxSpeed;
     private boolean diagnosticPassed;
+    private String Mechanic;
 
-    public Transport(String brand, String model, double volumeEngine, int maxSpeed, Mechanic) {
+    public void setMechanic(String mechanic) {
+        Mechanic = mechanic;
+    }
+
+    public String getMechanic() {
+        return Mechanic;
+    }
+    private List<Mechanic> mechanics = new ArrayList<>();
+    public Transport(String brand, String model, double volumeEngine, int maxSpeed, List Mechanic) {
         if(brand == null || brand == "") {
             this.brand = "default";
         } else {
@@ -45,15 +54,7 @@ public abstract class Transport implements Competing {
             this.volumeEngine = volumeEngine;
         }
     }
-    private List<Mechanic> mechanics = new ArrayList<>();
 
-    public List<Mechanic> getMechanics() {
-        return mechanics;
-    }
-
-    public void setMechanics(List<Mechanic> mechanics) {
-        this.mechanics = mechanics;
-    }
 
     public abstract void printType();
 
