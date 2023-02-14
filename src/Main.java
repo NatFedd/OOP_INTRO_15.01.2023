@@ -5,9 +5,9 @@ public class Main {
     public static void main(String[] args) {
 
         PassengerCars PassengerCars1 = new PassengerCars("Lada", "Granta",
-                1.5f, 15, 150, 15, BodyTypePC.SEDAN, Type.CAR, Mechanic.mechanic1, Driver.driverB1);
+                1.5f, 15, 150, 15, BodyTypePC.SEDAN, Type.CAR, Transport.List<Mechanic>, Driver.driverB1);
         PassengerCars PassengerCars2 = new PassengerCars("Audi", "A8_50_L_TDI_quattro",
-                3.5f, 18, 180, 12, BodyTypePC.SEDAN, Type.CAR, Mechanic.mechanic1, Driver.driverB2);
+                3.5f, 18, 180, 12, BodyTypePC.SEDAN, Type.CAR, mechanic, Driver.driverB2);
         PassengerCars PassengerCars3 = new PassengerCars("BMW", "Z8",
                 4.0f, 22, 190, 11, BodyTypePC.COUPE, Type.CAR, Mechanic.mechanic1, Driver.driverB3);
         PassengerCars PassengerCars4 = new PassengerCars("Kia", "Sportage_4_generation",

@@ -18,7 +18,7 @@ public abstract class Transport implements Competing {
         return Mechanic;
     }
     private List<Mechanic> mechanics = new ArrayList<>();
-    public Transport(String brand, String model, double volumeEngine, int maxSpeed, List Mechanic) {
+    public Transport(String brand, String model, double volumeEngine, int maxSpeed, List<Mechanic>mechanics) {
         if(brand == null || brand == "") {
             this.brand = "default";
         } else {
@@ -30,7 +30,7 @@ public abstract class Transport implements Competing {
         } else {
             this.model = model;
         }
-
+        this.mechanics = mechanics;
         this.setVolumeEngine(volumeEngine);
         this.setMaxSpeed(maxSpeed);
 
