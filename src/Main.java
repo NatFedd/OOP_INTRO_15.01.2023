@@ -4,10 +4,6 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        for (Transport transport : racers) {
-            System.out.println(transport + " " + Driver.getDriver() + " " + transport.getMachanic());
-        }
-
         PassengerCars PassengerCars1 = new PassengerCars("Lada", "Granta",
                 1.5f, 15, 150, 15, BodyTypePC.SEDAN, Type.CAR, List.of(Mechanic), Driver.driverB1);
         PassengerCars PassengerCars2 = new PassengerCars("Audi", "A8_50_L_TDI_quattro",

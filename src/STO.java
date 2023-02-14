@@ -3,15 +3,11 @@ import java.util.Queue;
 public class STO {
     private Transport transport;
         Queue<Transport> queue;
-//    public void addCarQueue(Transport transport) {
+//    public void addCarQueue(Transport transport) { //Добавить в очередь
 //        if (transport.getClass() != Bus.class) {
 //            queue.add(transport);
 //        }
 //    }
-    public void carryOutVehicleInspection() {
-        queue.element();
-    }
-
     public Transport getTransport() {
         return transport;
     }
@@ -20,13 +16,13 @@ public class STO {
         this.transport = transport;
     }
 
-    boolean needDiagnostics;
-         if (Type == Type.bus) {
-        needDiagnostics = false;
-        System.out.println("Диагностика не требуется");
-    }else
-    {
-        needDiagnostics = true;
+    public void boolean needDiagnostics() { //необходима ли диагностика
+        queue.element();
+        if (queue.element == bus) {
+            return false;
+            System.out.println("Диагностика не требуется");
+        } else {
+        return true;
         System.out.println("Транспортному средству нужна диагностика");
     }
 }
