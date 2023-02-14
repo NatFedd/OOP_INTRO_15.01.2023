@@ -55,9 +55,7 @@ public abstract class Transport implements Competing {
         }
     }
 
-
     public abstract void printType();
-
 
     @Override
     public void pitStop() {

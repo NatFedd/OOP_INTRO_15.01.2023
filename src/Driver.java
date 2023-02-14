@@ -1,9 +1,9 @@
-public abstract class Driver {
+public class Driver {
     private String nameDriver;
     private Boolean presenceDriversLicense;
     private int experience;
 
-    public Driver(String nameDriver, int experience,Boolean presenceDriversLicense) {
+    public Driver(String nameDriver,Boolean presenceDriversLicense, int experience) {
         this.nameDriver = nameDriver; //имя водителя
         this.experience = experience; //опыт
         this.presenceDriversLicense = presenceDriversLicense; //наличие прав
@@ -33,21 +33,21 @@ public abstract class Driver {
     public void setExperience(int experience) {
         this.experience = experience;
     }
-    public abstract void startingMove();
-    public abstract void stopping();
-    public abstract void refuel();
-    static Driver driverB1 = new Driver("Vladimir", 5, true);
-    static Driver driverB2 = new Driver("Aleksander", 2, true);
-    static Driver driverB3 = new Driver("Dima", 5, true);
-    static Driver driverB4 = new Driver("Alex", 2, true);
-    static Driver driverC1 = new Driver("Pavel", 12, true);
-    static Driver driverC2 = new Driver("Nikolay", 3, true);
-    static Driver driverC3 = new Driver("Konstantin", 12, true);
-    static Driver driverC4 = new Driver("Evgeniy", 3, true);
-    static Driver driverD1 = new Driver("Vitaliy", 4, true);
-    static Driver driverD2 = new Driver("Oleg", 7, true);
-    static Driver driverD3 = new Driver("Stanislav", 4, true);
-    static Driver driverD4 = new Driver("Andrey", 7, true);
+//    public void startingMove();
+//    public void stopping();
+//    public void refuel();
+    static Driver driverB1 = new Driver("Vladimir", true, 5);
+    static Driver driverB2 = new Driver("Aleksander", true, 2);
+    static Driver driverB3 = new Driver("Dima", true, 5);
+    static Driver driverB4 = new Driver("Alex", true, 2);
+    static Driver driverC1 = new Driver("Pavel", true, 12);
+    static Driver driverC2 = new Driver("Nikolay", true, 3);
+    static Driver driverC3 = new Driver("Konstantin", true, 12);
+    static Driver driverC4 = new Driver("Evgeniy", true, 3);
+    static Driver driverD1 = new Driver("Vitaliy", true, 4);
+    static Driver driverD2 = new Driver("Oleg", true, 7);
+    static Driver driverD3 = new Driver("Stanislav", true, 4);
+    static Driver driverD4 = new Driver("Andrey", true, 7);
 
     @Override
     public String toString() {

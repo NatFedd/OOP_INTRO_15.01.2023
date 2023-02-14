@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Trucks extends Transport {
     private final int pitStop;
     private final int maxSpeed;
@@ -9,7 +11,7 @@ public class Trucks extends Transport {
 
 
     public Trucks(String brand, String model, float volumeEngine, int pitStop, int maxSpeed, int bestLapTime, TypeLoadCapacityTrucks typeLoadCapacityTrucks, Type type, Mechanic mechanic, Driver driver) {
-        super(brand, model, volumeEngine, maxSpeed);
+        super(brand, model, volumeEngine, maxSpeed, (List) mechanic);
         this.pitStop = pitStop;
         this.maxSpeed = maxSpeed;
         this.bestLapTime = bestLapTime;
