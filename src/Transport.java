@@ -17,7 +17,7 @@ public abstract class Transport implements Competing {
     public String getMechanic() {
         return Mechanic;
     }
-    private List<Mechanic> mechanics = new ArrayList<>();
+
     public Transport(String brand, String model, double volumeEngine, int maxSpeed, List<Mechanic>mechanics) {
         if(brand == null || brand == "") {
             this.brand = "default";

@@ -62,9 +62,6 @@ public class Mechanic {
                 ", transportType='" + transportType + '\'' +
                 '}';
     }
-    static Mechanic mechanic1 = new Mechanic("Max", "Soloviev", "CarBox", "PassengerCars");
-    static Mechanic mechanic2 = new Mechanic("Sergey", "Ivanov", "Mashinery", "Bus");
-    static Mechanic mechanic3 = new Mechanic("Sasha", "Pavlov", "Machinery", "Truck");
 
 
 }

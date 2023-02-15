@@ -17,14 +17,14 @@ public class STO {
         this.transport = transport;
     }
 
-    public boolean needDiagnostics() { //необходима ли диагностика
-        queue.element();
-       if (queue.element == bus) {
-            return false;
-            System.out.println("Диагностика не требуется");
-        } else {
-            return true;
-            System.out.println("Транспортному средству нужна диагностика");
-        }
-    }
+//    public boolean needDiagnostics() { //необходима ли диагностика
+//        queue.element();
+//       if (queue.element == bus) {
+//            return false;
+//            System.out.println("Диагностика не требуется");
+//        } else {
+//            return true;
+//            System.out.println("Транспортному средству нужна диагностика");
+//        }
+//    }
 }
