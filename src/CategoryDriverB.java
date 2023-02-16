@@ -4,16 +4,16 @@ public class CategoryDriverB<T extends PassengerCars> extends Driver {
         super(nameDriver, presenceDriversLicense, experience);
     }
 
-    @Override
-    public void startingMove() {
-        System.out.println("Водитель категории В " + getNameDriver() + "начал движение");
-    }
-    @Override
-    public void stopping() {
-        System.out.println("Водитель категории В " + getNameDriver() + "прекратил движение");
-    }
-    @Override
-    public void refuel() {
-        System.out.println("Водитель категории B " + getNameDriver() + " заправляет авто");
-    }
+//    @Override
+//    public void startingMove() {
+//        System.out.println("Водитель категории В " + getNameDriver() + "начал движение");
+//    }
+//    @Override
+//    public void stopping() {
+//        System.out.println("Водитель категории В " + getNameDriver() + "прекратил движение");
+//    }
+//    @Override
+//    public void refuel() {
+//        System.out.println("Водитель категории B " + getNameDriver() + " заправляет авто");
+//    }
 }
