@@ -1,17 +1,16 @@
 import java.util.List;
 
 public class PassengerCars extends Transport {
-    public static boolean passDiagnostics;
+   public static boolean passDiagnostics;
     private int pitStop;
     private int maxSpeed;
     private int bestLapTime;
     private BodyTypePC bodyTypePC;
     private final Type type;
-    private Mechanic mechanic;
     private final Driver driver;
 
     public PassengerCars(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, BodyTypePC bodyTypePC, Type type, Mechanic mechanic, Driver driver) {
-        super(brand, model, volumeEngine, maxSpeed, (List<Mechanic>) mechanic);
+        super(brand, model, volumeEngine, maxSpeed, mechanics);
         this.type = type;
         this.driver = driver;
     }

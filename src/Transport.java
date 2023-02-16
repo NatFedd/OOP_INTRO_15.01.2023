@@ -30,7 +30,7 @@ public abstract class Transport implements Competing {
         } else {
             this.model = model;
         }
-        this.mechanics = mechanics;
+        //this.mechanics = mechanics;
         this.setVolumeEngine(volumeEngine);
         this.setMaxSpeed(maxSpeed);
 
