@@ -11,7 +11,7 @@ public class Trucks extends Transport {
 
 
     public Trucks(String brand, String model, float volumeEngine, int pitStop, int maxSpeed, int bestLapTime, TypeLoadCapacityTrucks typeLoadCapacityTrucks, Type type, Mechanic mechanic, Driver driver) {
-        super(brand, model, volumeEngine, maxSpeed, (List) mechanic);
+        super(brand, model, volumeEngine, maxSpeed, mechanic);
         this.pitStop = pitStop;
         this.maxSpeed = maxSpeed;
         this.bestLapTime = bestLapTime;

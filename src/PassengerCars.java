@@ -9,8 +9,17 @@ public class PassengerCars extends Transport {
     private final Type type;
     private final Driver driver;
 
-    public PassengerCars(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, BodyTypePC bodyTypePC, Type type, Mechanic mechanic, Driver driver) {
-        super(brand, model, volumeEngine, maxSpeed, mechanics);
+    public PassengerCars(String brand,
+                         String model,
+                         double volumeEngine,
+                         int pitStop,
+                         int maxSpeed,
+                         int bestLapTime,
+                         BodyTypePC bodyTypePC,
+                         Type type,
+                         Mechanic mechanic,
+                         Driver driver) {
+        super(brand, model, volumeEngine, maxSpeed, mechanic);
         this.type = type;
         this.driver = driver;
     }

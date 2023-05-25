@@ -11,7 +11,7 @@ public class Bus extends Transport {
     private Driver driver;
 
     public Bus(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, CapacityBus capacityBus, Type type, Mechanic mechanic, Driver driver) {
-        super(brand, model, volumeEngine, maxSpeed, (List) mechanic);
+        super(brand, model, volumeEngine, maxSpeed, mechanic);
         this.pitStop = pitStop;
         this.maxSpeed = maxSpeed;
         this.bestLapTime = bestLapTime;

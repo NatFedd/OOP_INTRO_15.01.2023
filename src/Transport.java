@@ -8,17 +8,17 @@ public abstract class Transport implements Competing {
     private double volumeEngine;
     private int maxSpeed;
     private boolean diagnosticPassed;
-    private String Mechanic;
+    private String mechanic;
 
     public void setMechanic(String mechanic) {
-        Mechanic = mechanic;
+        this.mechanic = mechanic;
     }
 
     public String getMechanic() {
-        return Mechanic;
+        return this.mechanic ;
     }
 
-    public Transport(String brand, String model, double volumeEngine, int maxSpeed, List<Mechanic>mechanics) {
+    public Transport(String brand, String model, double volumeEngine, int maxSpeed, Mechanic mechanics) {
         if(brand == null || brand == "") {
             this.brand = "default";
         } else {
