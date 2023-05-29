@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Bus extends Transport {
     private static boolean passDiagnostics;
     private final int pitStop;
@@ -5,14 +7,18 @@ public class Bus extends Transport {
     private final int bestLapTime;
     private CapacityBus capacityBus;
     private Type type;
+    private final Mechanic mechanic;
+    private Driver driver;
 
-    public Bus(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, CapacityBus capacityBus, Type type) {
-        super(brand, model, volumeEngine, maxSpeed);
+    public Bus(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, CapacityBus capacityBus, Type type, Mechanic mechanic, Driver driver) {
+        super(brand, model, volumeEngine, maxSpeed, mechanic);
         this.pitStop = pitStop;
         this.maxSpeed = maxSpeed;
         this.bestLapTime = bestLapTime;
         this.capacityBus = capacityBus;
         this.type = type;
+        this.mechanic = mechanic;
+        this.driver = driver;
 
     }
     public CapacityBus getCapacityBus() {
@@ -61,4 +67,3 @@ public class Bus extends Transport {
         throw new TransportTypeException("Автобусы диагностику проходить не должны");
     }
 }
-

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Transport implements Competing {
     private final String brand;
     private final String model;
@@ -5,7 +8,17 @@ public abstract class Transport implements Competing {
     private double volumeEngine;
     private int maxSpeed;
     private boolean diagnosticPassed;
-    public Transport(String brand, String model, double volumeEngine, int maxSpeed) {
+    private String mechanic;
+
+    public void setMechanic(String mechanic) {
+        this.mechanic = mechanic;
+    }
+
+    public String getMechanic() {
+        return this.mechanic ;
+    }
+
+    public Transport(String brand, String model, double volumeEngine, int maxSpeed, Mechanic mechanics) {
         if(brand == null || brand == "") {
             this.brand = "default";
         } else {
@@ -17,7 +30,7 @@ public abstract class Transport implements Competing {
         } else {
             this.model = model;
         }
-
+        //this.mechanics = mechanics;
         this.setVolumeEngine(volumeEngine);
         this.setMaxSpeed(maxSpeed);
 
@@ -41,8 +54,8 @@ public abstract class Transport implements Competing {
             this.volumeEngine = volumeEngine;
         }
     }
-    public abstract void printType();
 
+    public abstract void printType();
 
     @Override
     public void pitStop() {
@@ -103,7 +116,4 @@ public abstract class Transport implements Competing {
     public boolean isDiagnosticPassed(){
         return diagnosticPassed;
     }
-
-
-
 }

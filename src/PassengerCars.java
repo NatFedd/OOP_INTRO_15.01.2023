@@ -1,16 +1,27 @@
+import java.util.List;
+
 public class PassengerCars extends Transport {
-    public static boolean passDiagnostics;
+   public static boolean passDiagnostics;
     private int pitStop;
     private int maxSpeed;
     private int bestLapTime;
     private BodyTypePC bodyTypePC;
     private final Type type;
+    private final Driver driver;
 
-
-    public PassengerCars(String brand, String model, double volumeEngine, int pitStop, int maxSpeed, int bestLapTime, BodyTypePC bodyTypePC, Type type) {
-        super(brand, model, volumeEngine, maxSpeed);
+    public PassengerCars(String brand,
+                         String model,
+                         double volumeEngine,
+                         int pitStop,
+                         int maxSpeed,
+                         int bestLapTime,
+                         BodyTypePC bodyTypePC,
+                         Type type,
+                         Mechanic mechanic,
+                         Driver driver) {
+        super(brand, model, volumeEngine, maxSpeed, mechanic);
         this.type = type;
-
+        this.driver = driver;
     }
     public void setBodyTypePC(BodyTypePC bodyTypePC) {
         this.bodyTypePC = bodyTypePC;
@@ -41,4 +52,3 @@ public class PassengerCars extends Transport {
     }
 
 }
-
