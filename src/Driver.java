@@ -33,9 +33,6 @@ public class Driver {
     public void setExperience(int experience) {
         this.experience = experience;
     }
-//    public void startingMove();
-//    public void stopping();
-//    public void refuel();
     static Driver driverB1 = new Driver("Vladimir", true, 5);
     static Driver driverB2 = new Driver("Aleksander", true, 2);
     static Driver driverB3 = new Driver("Dima", true, 5);

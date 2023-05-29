@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -41,7 +38,7 @@ public class Main {
         System.out.println(bus4);
 
         Trucks trucks1 = new Trucks("Gaz", "66",
-                7.0f,18, 110, 4, TypeLoadCapacityTrucks.N1, Type.TRUCK, mechanic1, Driver.driverC1);
+                7.0f, 18, 110, 4, TypeLoadCapacityTrucks.N1, Type.TRUCK, mechanic1, Driver.driverC1);
         Trucks trucks2 = new Trucks("Kamaz", "T45",
                 12.0f, 20, 100, 5, TypeLoadCapacityTrucks.N2, Type.TRUCK, mechanic2, Driver.driverC2);
         Trucks trucks3 = new Trucks("Volvo", "Z60",
@@ -60,7 +57,7 @@ public class Main {
 
         try {
             checkTransport(bus1, bus2, bus3, bus4);
-        }catch (TransportTypeException e ) {
+        } catch (TransportTypeException e) {
             System.out.println("неверный тип транспорта" + e.getMessage());
         }
         Map<PassengerCars, List<Mechanic>> map = new HashMap<>();
@@ -68,21 +65,44 @@ public class Main {
         map.put(PassengerCars2, mechanics);
         map.put(PassengerCars3, mechanics);
         map.put(PassengerCars4, mechanics);
-        for(Map.Entry<PassengerCars, List<Mechanic>> car : map.entrySet()) {
+        for (Map.Entry<PassengerCars, List<Mechanic>> car : map.entrySet()) {
             System.out.println(car.getKey());
 
-            for(Mechanic mechanicsItem : car.getValue()) {
+            for (Mechanic mechanicsItem : car.getValue()) {
                 System.out.println(mechanicsItem);
             }
 
         }
+
+        Set<Driver> numbers = new HashSet<>();
+        numbers.add(Driver.driverB1);
+        numbers.add(Driver.driverB2);
+        numbers.add(Driver.driverB3);
+        numbers.add(Driver.driverB4);
+        numbers.add(Driver.driverC1);
+        numbers.add(Driver.driverC2);
+        numbers.add(Driver.driverC3);
+        numbers.add(Driver.driverC4);
+        numbers.add(Driver.driverD1);
+        numbers.add(Driver.driverD2);
+        numbers.add(Driver.driverD3);
+        numbers.add(Driver.driverD4);
+        System.out.println(numbers);
+        if (numbers.contains(Driver.driverD4)) {
+            System.out.println("Такой водитель уже есть");
+        }
+
+        Iterator<Driver> iterName = numbers.iterator();
+        while (iterName.hasNext()) {
+            System.out.println(iterName.next());
+        }
+
     }
 
-
-    public static void checkTransport(Transport...transports){
+    public static void checkTransport(Transport... transports) {
         int count = 0;
-        for(Transport transport : transports) {
-            if (!transport.passDiagnostics()){
+        for (Transport transport : transports) {
+            if (!transport.passDiagnostics()) {
                 try {
                     throw new RuntimeException(transport.getBrand() + " " + transport.getModel() + "не прошел диагностику!");
                 } catch (RuntimeException e) {
